@@ -81,6 +81,134 @@ console.log( undefined === null );     //false
 
 
 
+//array
+//collection of indexed and hetrogeneous elements called as array
+//[]
+//forEach()   (ES6)
+var arr1 = [10,20,30,40,50];
+var arr2 = [60,70,80,90,100];
+arr1.forEach((element,index)=>{
+    console.log(element , arr2[index]);
+});
+var f_subs = [`Angular`,`ReactJS`,`VueJS`];
+var b_subs = [`NodeJS`,`Deno`,`Spring Boot`];
+f_subs.forEach((element,index)=>{
+    console.log( element, b_subs[index] );
+});
+
+
+//JSON
+//Java Script Objet Notation
+//JSON, used to transfer the data over the Network
+//JSON is ligth weight
+//JSON is Eazy to parse
+// Objects--->{}    arrays --->[]     data ---> key&value pairs  , key&value separated by using ":", pairs separated by using ","
+var obj = {
+    sub_one : "ReactJS",
+    sub_two : "NodeJS",
+    sub_three : "MongoDB"
+};
+console.log( obj.sub_one, obj.sub_two, obj.sub_three );   //ReactJS NodeJS MongoDB
+
+
+
+//var 123$ = "hello";    //Variable declaration expected.
+var $abc123 = "Hello";
+var _abc123 = "Welcome";
+var _123abc = "Hello";
+//var abc#123 = "Welcome";    //Invalid character.
+
+
+
+
+/*
+    for(let i=0;i<5;i++){
+            
+    };
+    console.log(i);      //var:5    //let : ReferenceError: i is not defined   (ES6)
+    //var keyword breaks the scope rule
+    //let keyword obeys the scope rule
+*/
+
+
+
+//global variable
+let data = 100;
+//block
+{
+    //local variable
+    let data = 200;  
+}
+console.log(data);       //let:100     //var:200
+//is global member effected by local member, called as global polluting issue
+//global polluting issue raised because of var keyword
+//we can overcome global polluting issue by using let keyword
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
