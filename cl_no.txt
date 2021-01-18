@@ -64,6 +64,17 @@ website : https://code.visualstudio.com/download
 file    : VSCodeUserSetup-x64-1.52.0.exe
 
 
+=> Async
+
+=> jQuery
+
+=> JSON Server
+
+=> GET
+
+=> POST
+
+
 
 
 
