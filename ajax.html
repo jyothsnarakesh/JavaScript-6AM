@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--jQuery-->
+        <!--AJAX-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            /*
+                $.ajax({
+                    method:"GET",
+                    url:"http://localhost:3000/products?_sort=id&_order=desc",
+                    success:(posRes)=>{
+                        console.log(posRes);
+                    },
+                    error:(errRes)=>{
+                        console.log(errRes);
+                    }
+                })
+            */
+            $.ajax({
+                method:"POST",
+                url:"http://localhost:3000/products",
+                data:{
+                    "id":7,
+                    "p_id":777,
+                    "p_name":"p_seven",
+                    "p_cost":70000
+                },
+                success:(posRes)=>{
+                    console.log(posRes);
+                },
+                error:(errRes)=>{
+                    console.log(errRes);
+                }
+            });
+
+            //read the data from input controls
+            //populate response to table
+            //put & delete
+
+
+            //GET -- get the resource from server
+            //POST -- add the resource to server
+            //PUT -- update the resource in server
+            //DELETE -- delete the resource from server
+
+        </script>
+    </body>
+</html>
