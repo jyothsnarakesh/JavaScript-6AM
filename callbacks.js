@@ -58,41 +58,110 @@ fun_one( (arg1)=>{ console.log(arg1) },
 */
 
 
-function add(num,callback){
-    return callback(num+5,false);
+/*
+    function add(num,callback){
+        return callback(num+5,false);
+    };
+
+    function sub(num,callback){
+        return callback(num-3,false);
+    };
+
+    function mul(num,callback){
+        return callback(num*2,false);
+    };
+
+    function div(num,callback){
+        return callback((num/2)-2, false);
+    };
+
+    add(5,(addRes,error)=>{
+        if(!error){
+            sub(addRes,(subRes,error)=>{
+                if(!error){
+                    mul(subRes,(mulRes,error)=>{
+                        if(!error){
+                            div(mulRes,(finalRes,error)=>{
+                                if(!error){ 
+                                    console.log(finalRes);
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        }
+    });
+    //HOF
+    //Not an API
+    //No Catch Block
+    //Lot of Boiler Code
+    //Not Eazy to Debug
+    //Nothing to Return
+
+    //callback hell (tightly coupled)    ====> Promises (loosly coupled)
+*/
+
+
+function add(num){
+    return new Promise((resolve,reject)=>{
+        resolve(num+5);
+    });
 };
 
-function sub(num,callback){
-    return callback(num-3,false);
+function sub(num){
+    return new Promise((resolve,reject)=>{
+        resolve(num-3);
+    });
 };
 
-function mul(num,callback){
-    return callback(num*2,false);
+function mul(num){
+    return new Promise((resolve,reject)=>{
+        resolve(num*2);
+    });
 };
 
-function div(num,callback){
-    return callback((num/2)-2, false);
+function div(num){
+    return new Promise((resolve,reject)=>{
+        resolve((num/2)-2);
+    });
 };
 
-add(5,(addRes,error)=>{
-    if(!error){
-        sub(addRes,(subRes,error)=>{
-            if(!error){
-                mul(subRes,(mulRes,error)=>{
-                    if(!error){
-                        div(mulRes,(finalRes,error)=>{
-                            if(!error){ 
-                                console.log(finalRes);
-                            }
-                        });
-                    }
-                });
-            }
-        });
-    }
-});
+async function consume(){
+    let addRes = await add(5);
+    let subRes = await sub(addRes);
+    let mulRes = await mul(subRes);
+    let final_res = await div(mulRes);
+    console.log(final_res);
+};
 
-//callback hell (tightly coupled)    ====> Promises (loosly coupled)
+consume();    //5
+//Thenable
+//Less Boiler Code
+//Rich in API
+//Promise
+//Eazy to Debug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
