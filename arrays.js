@@ -346,37 +346,289 @@ console.log(
 */
 
 
+/*
+
+    let arr1 = [10,20,10,40,20,30,10,20];
+
+        arr1.forEach((element,index)=>{
+            console.log(arr1.indexOf(element))
+        });    //0 1 0 3 1 5 0 1
+
+    let arr2 = [40,80,20,40,20,50,10,80,40];
+    arr2.forEach((element,index)=>{
+        console.log(arr2.indexOf(element));
+    });
+
+    let arr3 = [10,20,30,10,20,30];
+    console.log(
+        arr3.filter((element,index)=>{
+            return arr3.indexOf(element) == index;
+        })
+    );      //[ 10, 20, 30 ]
+
+
+    let arr4 = [10,30,20,10,50,10,30];
+    console.log(
+        arr4.filter((element,index)=>{
+            return arr4.indexOf(element) === index;
+        }).sort((arg1,arg2)=>{
+            return arg2-arg1;
+        })
+    );
+
+*/
+
 
 /*
-    indexOf()
+    //length
+    //used to know the length of array
+
+    let arr = [10,20,30,40,50,60,70,80,90,100];
+    console.log( arr.length );                 //10
+    console.log(arr[0],  arr[4],  arr[9]);     //10 50 100
+    console.log(arr[10], arr[-1]);             //undefined                //undefined
+
+    arr.length = 5;
+    console.log( arr.length );                  //5
+
+    console.log(arr[0], arr[4], arr[5]);        //10 50 undefined 
 */
-let arr1 = [10,20,10,40,20,30,10,20];
 
-    arr1.forEach((element,index)=>{
-        console.log(arr1.indexOf(element))
-    });    //0 1 0 3 1 5 0 1
 
-let arr2 = [40,80,20,40,20,50,10,80,40];
-arr2.forEach((element,index)=>{
-    console.log(arr2.indexOf(element));
-});
+/*
+    //delete
+    let arr = [10,20,30,40,50];
+    console.log( arr.length );              //5
 
-let arr3 = [10,20,30,10,20,30];
+
+    delete arr[2];
+    console.log(arr.length);                //5
+
+    console.log(arr);                       //[ 10, 20, <1 empty item>, 40, 50 ]
+*/
+
+
+/*
+    fill()
+        - replace the elements
+
+let arr = [10,20,30,40,50];
+arr.fill(100);
+console.log(arr);                       //[ 100, 100, 100, 100, 100 ]
+
+arr.fill(200,2);
+console.log(arr);                       //[ 100, 100, 200, 200, 200 ]
+
+arr.fill(300,1,3);
+console.log( arr );                     //[ 100, 300, 300, 200, 200 ]
+*/
+
+
+
+/*
+        flat()
+
+let arr = [[1],[2,3],[4],[5,6]];
+
+console.log( arr.flat(1).reduce((a,b)=>{
+    return a+b;
+}) );      //21
+
+
+
+let arr = [1,[[[[[[[[[[2]]]]]]]]]]];
 console.log(
-    arr3.filter((element,index)=>{
-        return arr3.indexOf(element) == index;
+    arr.flat(Infinity).reduce((arg1,arg2)=>{
+        return arg1+arg2;
     })
-);      //[ 10, 20, 30 ]
+);      //3 
+
+*/
 
 
-let arr4 = [10,30,20,10,50,10,30];
+
+/*
+    let arr1 = [1,2,3,4,5];
+    let arr2 = ["one","two","three","four","five"];
+
+    //[ [1,"one"], [2,"two"], [3,"three"], [4,"four"], [5,"five"] ]
+    console.log( 
+        arr1.map((element,index)=>{
+            return [element,arr2[index]];
+        }) 
+    );
+
+
+    //[ 1,"one", 2,"two", 3,"three",4,"four",5,"five" ]
+    console.log( 
+        arr1.map((element,index)=>{
+            return [element,arr2[index]];
+        }).flat(1)
+    );
+
+
+    console.log( 
+        arr1.flatMap((element,index)=>{
+            return [element,arr2[index]];
+        }) 
+    );
+*/
+
+
+
+
+//reverse()
+let arr = [10,20,30,40,50];
+console.log( arr.reverse() );       //[ 50, 40, 30, 20, 10 ]
+
+
 console.log(
-    arr4.filter((element,index)=>{
-        return arr4.indexOf(element) === index;
-    }).sort((arg1,arg2)=>{
-        return arg2-arg1;
-    })
-);
+    Array.from("Hello").reverse().join("")
+);   //olleh
+
+
+console.log(
+    Array.from("Hello").reverse().toString().replace(",","")
+);     //ol,l,e,H
+
+
+console.log(
+    Array.from("Hello").reverse().toString().replace(/,/g,"")
+);     //olleH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
